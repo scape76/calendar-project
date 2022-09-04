@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Calendar</title>
+</head>
+
+<body>
+    <header class="header">
+        <button class="create-btn">
+            <i class="fa-solid fa-plus"></i>
+            <span class="create-btn__text">Create</span> 
+        </button>
+        <button class="today-btn"> Today </button>
+        <button class="btn-left"><i class="arrow arrow__left"></i></button>
+        <button class="btn-right"><i class=" arrow arrow__right"></i></button>
+        <span class="title">Month Year</span>
+    </header>
+
+    <section class="calendar">
+        <div class="week-line">
+        </div>
+        <div class="calendar-column">
+        </div>
+        <div class="pop-up">
+            <button class="exit-btn"><div class="exit-btn__icon"></div></button>
+            <input class="pop-up__title" type="text" placeholder="Add Title">
+            <div class="time-set">
+                <input class="time-set__style time-set__date" type="date"></input>
+                <input class="time-set__style time-set__start" type="time"></input>
+                <input class="time-set__style time-set__end" type="time"></input>
+            </div>
+            <textarea class="pop-up__comment" type="comment" placeholder="Add Comments"></textarea>
+            <button class="save-btn">Save</button>
+        </div>
+    </section>
+
+    <script src="./src/scripts/index.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/c544fe69d4.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
