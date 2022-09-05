@@ -1,23 +1,12 @@
 import { generateNumbersArray } from "./common.js";
+import { today, getMondayDate, calendarDays } from "./date.js";
 
 const weekLineElem = document.querySelector(".week-line");
-
-const today = new Date();
-
-const calendarDays = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
 
 const getDateClassName = (currentDate, className) => {
   return today.toLocaleDateString() !== currentDate.toLocaleDateString()
     ? className
     : `${className} ${className}-today`;
-};
-
-const getMondayDate = (startingDate) => {
-  let mondayDate = new Date(startingDate.getTime());
-  while (mondayDate.getDay() !== 1) {
-    mondayDate.setDate(mondayDate.getDate() - 1);
-  }
-  return mondayDate;
 };
 
 const createWeekLine = (mondayDate) => {

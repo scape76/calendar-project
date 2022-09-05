@@ -1,26 +1,17 @@
 import { renderCalendarColumn } from "./calendarColumn.js";
 import { renderWeekLine } from "./weekLine.js";
-import {
-  navigationLeftButton,
-  handleNavigationLeftBtnClick,
-  navigationRightButton,
-  handleNavigationRightBtnClick,
-  navigationTodayButton,
-  handleNavigationTodayBtnClick,
-} from "./headerActions.js";
+import { setEventListeners } from "./headerActions.js";
+import { setTitle } from "./title.js";
+import { startingDate, getMondayDate } from "./date.js";
 
-export let startingDate = new Date();
+export const renderLayout = (startingDate) => {
+  const mondayDate = getMondayDate(startingDate);
+  renderWeekLine(startingDate);
+  renderCalendarColumn(mondayDate);
+  setTitle(mondayDate);
+};
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderCalendarColumn();
-  renderWeekLine(startingDate);
-  navigationLeftButton.addEventListener("click", handleNavigationLeftBtnClick);
-  navigationRightButton.addEventListener(
-    "click",
-    handleNavigationRightBtnClick
-  );
-  navigationTodayButton.addEventListener(
-    "click",
-    handleNavigationTodayBtnClick
-  );
+  renderLayout(startingDate);
+  setEventListeners();
 });

@@ -29,10 +29,10 @@ const createHoursSection = () => {
     .join("");
 };
 
-const createDaysSection = () => {
+const createDaysSection = (currentMondayDate) => {
   return generateNumbersArray(0, 6)
     .map((day) => {
-      const currentDay = new Date();
+      const currentDay = new Date(currentMondayDate.getTime());
       currentDay.setDate(currentDay.getDate() + day);
       return `
       <div class="calendar-section"
@@ -45,9 +45,9 @@ const createDaysSection = () => {
     .join("");
 };
 
-export const renderCalendarColumn = () => {
+export const renderCalendarColumn = (currentMondayDate) => {
   const timeColumn = createTimeColumn();
-  const daysSection = createDaysSection();
+  const daysSection = createDaysSection(currentMondayDate);
 
   const calendarColumnChildrenElem = `
   <div class="time-column" data-column-number="${currentColumnNumber}">
