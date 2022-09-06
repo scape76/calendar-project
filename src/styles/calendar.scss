@@ -79,19 +79,21 @@
 
 .event {
   position: absolute;
+  left: 4px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  width: Calc(100% - 4px);
+  width: Calc(100% - 8px);
   opacity: 0.9;
   border-radius: 10px;
   font-size: 12px;
+  background-color: #ecaf44;
+  cursor: pointer;
 }
 
 .deleteBtn {
-  visibility: hidden;
   position: absolute;
   display: flex;
   justify-content: center;

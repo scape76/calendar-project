@@ -1,22 +1,36 @@
 import { renderLayout } from "./index.js";
 import { startingDate } from "./date.js";
+import {
+  popupElem,
+  handleExitBtnClick,
+  handleCreateEventAction,
+} from "./createEvent.js";
 
-export const navigationLeftButton = document.querySelector(".btn-left");
-export const navigationRightButton = document.querySelector(".btn-right");
-export const navigationTodayButton = document.querySelector(".today-btn");
+const navigationLeftButton = document.querySelector(".btn-left");
+const navigationRightButton = document.querySelector(".btn-right");
+const navigationTodayButton = document.querySelector(".today-btn");
+const createBtnElem = document.querySelector(".create-btn");
+const exitBtnElem = document.querySelector(".exit-btn");
+const saveBtnElem = document.querySelector(".save-btn");
 
-export const handleNavigationLeftBtnClick = () => {
+const handleCreateBtnClick = () => {
+  popupElem.style.visibility = "visible";
+  exitBtnElem.addEventListener("click", handleExitBtnClick);
+  saveBtnElem.addEventListener("click", handleCreateEventAction);
+};
+
+const handleNavigationLeftBtnClick = () => {
   startingDate.setDate(startingDate.getDate() - 7);
   renderLayout(startingDate);
 };
 
-export const handleNavigationRightBtnClick = () => {
+const handleNavigationRightBtnClick = () => {
   startingDate.setDate(startingDate.getDate() + 7);
   renderLayout(startingDate);
 };
 
-export const handleNavigationTodayBtnClick = () => {
-  let startingDate = new Date();
+const handleNavigationTodayBtnClick = () => {
+  startingDate.setTime(new Date().getTime());
   renderLayout(startingDate);
 };
 
@@ -30,4 +44,5 @@ export const setEventListeners = () => {
     "click",
     handleNavigationTodayBtnClick
   );
+  createBtnElem.addEventListener("click", handleCreateBtnClick);
 };

@@ -1,7 +1,6 @@
 import { generateNumbersArray } from "./common.js";
-
+import { startingDate, getMondayDate } from "./date.js";
 const calendarColumnElem = document.querySelector(".calendar-column");
-export const currentColumnNumber = 1;
 
 const fixTimeAppearance = (number) =>
   number >= 10 ? `${number}:00` : `0${number}:00`;
@@ -48,6 +47,7 @@ const createDaysSection = (currentMondayDate) => {
 export const renderCalendarColumn = (currentMondayDate) => {
   const timeColumn = createTimeColumn();
   const daysSection = createDaysSection(currentMondayDate);
+  let currentColumnNumber = getMondayDate(startingDate).getFullYear();
 
   const calendarColumnChildrenElem = `
   <div class="time-column" data-column-number="${currentColumnNumber}">
@@ -59,6 +59,5 @@ export const renderCalendarColumn = (currentMondayDate) => {
     ${daysSection}
   </div>
   `;
-
   calendarColumnElem.innerHTML = calendarColumnChildrenElem;
 };
