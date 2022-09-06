@@ -1,5 +1,6 @@
-import { generateNumbersArray } from "./common.js";
-import { startingDate, getMondayDate } from "./date.js";
+import { generateNumbersArray } from "../common.js";
+import { startingDate, getMondayDate } from "../date.js";
+
 const calendarColumnElem = document.querySelector(".calendar-column");
 
 const fixTimeAppearance = (number) =>

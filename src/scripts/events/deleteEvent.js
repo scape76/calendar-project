@@ -1,6 +1,6 @@
-import { deleteEvent, getEventsList } from "./withGateway.js";
+import { deleteEvent, getEventsList } from "../withGateway.js";
 import { renderEvents } from "./renderEvents.js";
-import { setItem } from "./storage.js";
+import { setItem } from "../storage.js";
 
 const handleDeleteEventClick = (id) => {
   deleteEvent(id)

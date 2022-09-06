@@ -1,4 +1,4 @@
-import { getItem } from "./storage.js";
+import { getItem } from "../storage.js";
 import { handleEventElemClick } from "./deleteEvent.js";
 
 const clearTableFromEvents = () => {

@@ -1,5 +1,5 @@
-import { getEventsList, createEvent } from "./withGateway.js";
-import { setItem } from "./storage.js ";
+import { getEventsList, createEvent } from "../withGateway.js";
+import { setItem } from "../storage.js ";
 import { renderEvents } from "./renderEvents.js";
 
 export const popupElem = document.querySelector(".pop-up");

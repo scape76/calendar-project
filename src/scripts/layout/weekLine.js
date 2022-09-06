@@ -1,5 +1,5 @@
-import { generateNumbersArray } from "./common.js";
-import { today, getMondayDate, calendarDays } from "./date.js";
+import { generateNumbersArray } from "../common.js";
+import { today, getMondayDate, calendarDays } from "../date.js";
 
 const weekLineElem = document.querySelector(".week-line");
 

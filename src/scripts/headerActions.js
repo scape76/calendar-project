@@ -4,7 +4,7 @@ import {
   popupElem,
   handleExitBtnClick,
   handleCreateEventAction,
-} from "./createEvent.js";
+} from "./events/createEvent.js";
 
 const navigationLeftButton = document.querySelector(".btn-left");
 const navigationRightButton = document.querySelector(".btn-right");
