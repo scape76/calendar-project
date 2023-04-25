@@ -71,6 +71,7 @@
 .calendar-section {
   position: relative;
   width: -webkit-fill-available;
+  width: -moz-available;
   &__item {
     height: 60px;
     border-left: 1px solid rgb(170, 170, 170);
