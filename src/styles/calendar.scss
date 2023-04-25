@@ -30,6 +30,7 @@
 
 .box-day {
   width: -webkit-fill-available;
+  width: -moz-available;
   display: flex;
   flex-direction: column;
   align-items: center;
